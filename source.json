@@ -1,0 +1,169 @@
+{
+  "id": "ecdict-cet4-ascii-frequencywords2018-intersection-v1",
+  "name": "ECDICT cet4 纯字母词条 × OpenSubtitles 2018 正频次交集",
+  "version": "2026-11-13",
+  "retrievedAt": "2026-11-13",
+  "poolSize": 3837,
+  "wordCount": 3837,
+  "totalWeight": 61869481,
+  "totalFrequency": 61869481,
+  "rarityThresholds": {
+    "common": 15730,
+    "rare": 6505,
+    "epic": 2531
+  },
+  "excludedUnmatched": 0,
+  "sourceVersion": {
+    "ECDICT": "39cfb9672c0906b63569e0453c2e6abfb9ab182a",
+    "FrequencyWords": "525f9b560de45753a5ea01069454e72e9aa541c6"
+  },
+  "sourceUrls": {
+    "dictionary": "https://github.com/skywind3000/ECDICT/blob/39cfb9672c0906b63569e0453c2e6abfb9ab182a/ecdict.csv",
+    "frequency": "https://github.com/hermitdave/FrequencyWords/blob/525f9b560de45753a5ea01069454e72e9aa541c6/content/2018/en/en_full.txt"
+  },
+  "licenses": [
+    {
+      "component": "dictionary",
+      "license": "MIT",
+      "file": "ECDICT-LICENSE.txt"
+    },
+    {
+      "component": "frequency",
+      "license": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "component": "derivedDataset",
+      "license": "CC BY-SA 4.0",
+      "file": "CC-BY-SA-4.0.txt"
+    }
+  ],
+  "dictionary": {
+    "repository": "https://github.com/skywind3000/ECDICT",
+    "file": "ecdict.csv",
+    "commit": "39cfb9672c0906b63569e0453c2e6abfb9ab182a",
+    "gitBlobSha": "0e527e22e0e0d22f012b0ed251a8dddd5891773b",
+    "sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc",
+    "bytes": 66009548,
+    "pinnedUrl": "https://github.com/skywind3000/ECDICT/blob/39cfb9672c0906b63569e0453c2e6abfb9ab182a/ecdict.csv",
+    "license": "MIT",
+    "tag": "cet4",
+    "tagScopeNote": "cet4 是 ECDICT 维护的标签，本项目不是教育考试机构发布或认证的官方四级词表。",
+    "licenseFile": "ECDICT-LICENSE.txt"
+  },
+  "frequencySource": {
+    "repository": "https://github.com/hermitdave/FrequencyWords",
+    "file": "en_full.txt",
+    "commit": "525f9b560de45753a5ea01069454e72e9aa541c6",
+    "gitBlobSha": "05ccf20cd2e3789ddb849b14f0374aa089d90cc5",
+    "sha256": "7fea67ab954e2c01df6c608c9826e594cf36f8823b3243554f88245fb75dc506",
+    "bytes": 19977552,
+    "pinnedUrl": "https://github.com/hermitdave/FrequencyWords/blob/525f9b560de45753a5ea01069454e72e9aa541c6/content/2018/en/en_full.txt",
+    "license": "CC BY-SA 4.0 (content); MIT applies to upstream code only",
+    "edition": "2018",
+    "corpus": "OpenSubtitles 2018 tokenized English subtitles",
+    "unit": "词形在字幕语料中的出现次数（token occurrences）",
+    "sourceEntries": 1656996,
+    "sourceTokenCount": 734777659,
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "licenseFile": "CC-BY-SA-4.0.txt"
+  },
+  "selection": {
+    "rules": [
+      "tag 按空格拆分后精确包含 cet4",
+      "去掉词条首尾空格后完整匹配 ASCII [A-Za-z]+",
+      "单词转为 lowercase 后去重；优先原本就是小写的源记录，再按源拼写与CSV记录序号稳定选择",
+      "仅保留 FrequencyWords 2018 en_full.txt 中精确同形且 frequency>0 的词"
+    ],
+    "dictionaryRows": 770611,
+    "cet4TaggedRows": 3849,
+    "excludedNotCet4Rows": 766762,
+    "cet4AsciiRowsBeforeDedup": 3837,
+    "excludedNonAsciiHeadwordRows": 12,
+    "excludedNonAsciiHeadwords": [
+      "B.C.",
+      "P.M.",
+      "father-in-law",
+      "i.e.",
+      "ice-cream",
+      "living-room",
+      "so-called",
+      "up-to-date",
+      "upside-down",
+      "well-known",
+      "world-wide",
+      "x-ray"
+    ],
+    "trimmedHeadwordRows": 0,
+    "caseInsensitiveUniqueCandidates": 3837,
+    "caseDuplicateGroups": 0,
+    "caseDuplicateRowsRemoved": 0,
+    "caseDuplicates": [],
+    "matchedPositiveFrequencyWords": 3837,
+    "excludedUnmatchedWords": 0,
+    "unmatchedWords": [],
+    "emptyMeaningWords": [],
+    "emptyPosWords": 3837
+  },
+  "sampling": {
+    "method": "sequential_per_word_frequency_weighted_without_replacement",
+    "weightField": "frequency",
+    "formula": "P(word_i at pick k) = frequency_i / sum(frequency_j for words not mastered and not already selected in this pack)",
+    "totalWeight": 61869481,
+    "smoothing": false,
+    "unobservedHandling": "未匹配词被排除；没有将未观测次数填成 1，也没有伪造 frequency。",
+    "rarityAffectsProbability": false,
+    "pity": false,
+    "excludesMastered": true,
+    "withoutReplacementWithinPack": true,
+    "learningCanRepeatAcrossPacks": true,
+    "packSize": 5,
+    "packCooldownMs": 60000,
+    "cooldownNote": "每 60000ms 最多成功开一包（相邻两次成功开包的开始时刻相差一个周期）；半撕、点击震动与空词池不消耗次数。期限以绝对时间戳存在浏览器本地独立键 wordpack.cooldown.v1，同源标签页与刷新后共同遵守，不影响词库与学习进度。",
+    "shortPoolHandling": "min(5, eligible word count); zero eligible words disables opening",
+    "baseProbabilityFieldNote": "words.json probability is the original full-pool frequency / 61869481; actual draw probabilities are conditional on the eligible pool and preceding picks"
+  },
+  "rarity": {
+    "basis": "过滤后固定词库按原始 frequency 降序排序的约 25% / 50% / 75% 分界，仅作展示标签；同频归较常见档",
+    "cutoffFrequencies": {
+      "common": 15730,
+      "rare": 6505,
+      "epic": 2531
+    },
+    "counts": {
+      "common": 960,
+      "rare": 959,
+      "epic": 959,
+      "legendary": 959
+    },
+    "order": [
+      "common",
+      "rare",
+      "epic",
+      "legendary"
+    ],
+    "labelsZh": {
+      "common": "常见",
+      "rare": "稀有",
+      "epic": "史诗",
+      "legendary": "传说"
+    },
+    "tieBreakForPoolRank": "frequency 降序；同频按 lowercase word ASCII 升序，poolRank 为从 1 开始的序号。标签只按频次阈值决定。"
+  },
+  "content": {
+    "meaningZh": "直接来自 ECDICT translation；只将字面量 \\n 转换为换行并去掉首尾空白。",
+    "pos": "直接保留 ECDICT pos，可能包含词性占比；空值未猜填。",
+    "phonetic": "直接保留 ECDICT phonetic，未声称已逐词校对。",
+    "example": "未添加例句；未复制字幕句子，也未生成虚构词典例句。",
+    "changes": "按标签与ASCII词形筛选、lowercase去重、精确关联语料频次、添加稳定ID/原始排名/词库内排序/展示标签与权重；词典释义未做语义改写。"
+  },
+  "limits": [
+    "2018 指所选数据版本，不表示只统计 2018 年播出的作品。",
+    "字幕偏向影视对白，包含体裁、人物、翻译及字幕处理偏差；频率不代表所有英文场景或当前全网使用量。",
+    "统计对象是词形，不合并动词时态、单复数、词元或英美拼写变体。",
+    "未匹配不表示现实中从未使用；这里只说明在固定频次文件中没有同形正频次记录。",
+    "稀有度不是 CEFR、四六级难度或文化价值认证。"
+  ],
+  "derivedDataLicense": "CC BY-SA 4.0",
+  "attribution": "Dictionary: skywind3000/ECDICT project and contributors (MIT). Frequency counts: Hermit Dave, FrequencyWords, OpenSubtitles 2018 (CC BY-SA 4.0 content). This filtered and joined dataset is redistributed under CC BY-SA 4.0; source selection and added metadata are described above. No upstream endorsement is implied."
+}
